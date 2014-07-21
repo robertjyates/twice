@@ -6,20 +6,15 @@ if (len(argv) != 2):
 else:
     inputstring = argv[1]
     print "Input string:", inputstring
-    inputcharlist = list(inputstring)
-    print "Input char list:", inputcharlist
-
-    c = Counter(inputcharlist)
-    print list(c.elements())
+    inputCnt = Counter(inputstring)
+    print list(inputCnt.elements())
+    print
 
     with open('data.in', 'r') as f:
         for line in f:
-            inputCnt = c
             word = line.strip()
-            wordCnt = Counter(list(word))
-    
+            wordCnt = Counter(word)
             print word
-            print list(inputCnt.elements())
             print list(wordCnt.elements())
 
             remainingCnt = wordCnt - inputCnt
@@ -27,4 +22,4 @@ else:
             if remainingCnt.values() == []:
                 print "Word matches: %s" % word
             print
-  
+
