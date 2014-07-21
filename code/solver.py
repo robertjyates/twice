@@ -9,13 +9,14 @@ else:
     print "Input string:", inputStr
     #dictionaryFilenames = ["data.in"]
     dictionaryFilenames = ["../scowl-7.1/final/english-words.10",
-                      "../scowl-7.1/final/english-words.20"]
+                           "../scowl-7.1/final/english-words.20"]
     for filename in dictionaryFilenames:
         with open(filename, 'r') as f:
             for line in f:
                 word = line.strip()
-                wordCnt = Counter(word)
-                remainingCnt = wordCnt - inputCnt
-                if remainingCnt.values() == []:
-                    print "Word matches: %s" % word
+                if word != inputStr:
+                    wordCnt = Counter(word)
+                    remainingCnt = wordCnt - inputCnt
+                    if remainingCnt.values() == []:
+                        print "Word matches: %s" % word
 
