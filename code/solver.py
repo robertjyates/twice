@@ -1,7 +1,7 @@
 from sys import argv
 from collections import Counter
 
-if (len(argv) != 2):
+if len(argv) != 2:
     print "Usage: %s <jumbled_word>" % argv[0]
 else:
     inputStr = argv[1]
