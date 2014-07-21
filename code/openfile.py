@@ -14,7 +14,16 @@ else:
 
     myfile = open( "data.in", "r" )
     for line in myfile:
+        inputCnt = c
         word = line.strip()
+        wordCnt = Counter(list(word))
+    
         print word
+        print list(inputCnt.elements())
+        print list(wordCnt.elements())
+
+        remainingCnt = wordCnt - inputCnt
+        print list(remainingCnt.elements())
+
     myfile.close()
   
