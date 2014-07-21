@@ -24,6 +24,9 @@ else:
 
         remainingCnt = wordCnt - inputCnt
         print list(remainingCnt.elements())
+        if remainingCnt.values() == []:
+            print "Word matches: %s" % word
+        print
 
     myfile.close()
   
