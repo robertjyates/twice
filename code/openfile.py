@@ -1,12 +1,16 @@
-import sys
+from sys import argv
+from collections import Counter
 
-if (len(sys.argv) != 2):
-    print "Usage: %s <inputstring>" % sys.argv[0]
+if (len(argv) != 2):
+    print "Usage: %s <inputstring>" % argv[0]
 else:
-    inputstring = sys.argv[1]
+    inputstring = argv[1]
     print "Input string:", inputstring
     inputcharlist = list(inputstring)
     print "Input char list:", inputcharlist
+
+    c = Counter(inputcharlist)
+    print list(c.elements())
 
     myfile = open( "data.in", "r" )
     mylist = []
