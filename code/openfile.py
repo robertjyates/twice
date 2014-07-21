@@ -12,21 +12,19 @@ else:
     c = Counter(inputcharlist)
     print list(c.elements())
 
-    myfile = open( "data.in", "r" )
-    for line in myfile:
-        inputCnt = c
-        word = line.strip()
-        wordCnt = Counter(list(word))
+    with open('data.in', 'r') as f:
+        for line in f:
+            inputCnt = c
+            word = line.strip()
+            wordCnt = Counter(list(word))
     
-        print word
-        print list(inputCnt.elements())
-        print list(wordCnt.elements())
+            print word
+            print list(inputCnt.elements())
+            print list(wordCnt.elements())
 
-        remainingCnt = wordCnt - inputCnt
-        print list(remainingCnt.elements())
-        if remainingCnt.values() == []:
-            print "Word matches: %s" % word
-        print
-
-    myfile.close()
+            remainingCnt = wordCnt - inputCnt
+            print list(remainingCnt.elements())
+            if remainingCnt.values() == []:
+                print "Word matches: %s" % word
+            print
   
