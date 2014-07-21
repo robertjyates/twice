@@ -13,10 +13,8 @@ else:
     print list(c.elements())
 
     myfile = open( "data.in", "r" )
-    mylist = []
     for line in myfile:
-        mylist.append( line.strip() )
+        word = line.strip()
+        print word
     myfile.close()
   
-    for line in mylist:
-        print line
