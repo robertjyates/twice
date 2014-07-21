@@ -6,7 +6,6 @@ if len(argv) != 2:
 else:
     inputStr = argv[1]
     inputCnt = Counter(inputStr)
-    print "Input string:", inputStr
     #dictionaryFilenames = ["data.in"]
     dictionaryFilenames = ["../scowl-7.1/final/english-words.10",
                            "../scowl-7.1/final/english-words.20"]
@@ -18,5 +17,5 @@ else:
                     wordCnt = Counter(word)
                     remainingCnt = wordCnt - inputCnt
                     if remainingCnt.values() == []:
-                        print "Word matches: %s" % word
+                        print word
 
