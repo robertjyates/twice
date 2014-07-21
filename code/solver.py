@@ -6,11 +6,12 @@ if len(argv) != 2:
 else:
     inputStr = argv[1]
     inputCnt = Counter(inputStr)
+    #dictionaryDirectory = "./"
     #dictionaryFilenames = ["data.in"]
-    dictionaryFilenames = ["../scowl-7.1/final/english-words.10",
-                           "../scowl-7.1/final/english-words.20"]
+    dictionaryDirectory = "../scowl-7.1/final/"
+    dictionaryFilenames = ["english-words.10", "english-words.20"]
     for filename in dictionaryFilenames:
-        with open(filename, 'r') as f:
+        with open(dictionaryDirectory + filename, 'r') as f:
             for line in f:
                 word = line.strip()
                 if word != inputStr:
